@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- STEP 1: Change the title below to your website's name -->
+    <title>Your Website Title</title>
+    
+    <!-- Google Font: Inter for clean, modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS for quick, responsive layout utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS for fine-tuning and easy color variables -->
+    <style>
+        /* ==========================================================================
+           EASY CUSTOMIZATION VARIABLES
+           Change these values to tweak the look of your entire site at once!
+           ========================================================================== */
+        :root {
+            --bg-color: #000000;          /* Pure Black Background */
+            --text-primary: #ffffff;      /* Crisp White Text */
+            --text-secondary: #a1a1aa;    /* Muted Gray for descriptions/subtitles */
+            --border-color: #27272a;      /* Subtle dark gray for lines and card borders */
+            --accent-hover: #ffffff;      /* Highlight color when hovering over links/cards */
+        }
+
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;      /* Smooth scrolling when clicking nav links */
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Link Hover Effect */
+        .nav-link {
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Minimalist Card Styling */
+        .minimal-card {
+            background-color: #09090b;    /* Very slightly off-black for subtle depth */
+            border: 1px solid var(--border-color);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .minimal-card:hover {
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Minimalist Button Styling */
+        .btn-outline {
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+        .btn-outline:hover {
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-white selection:text-black">
+
+    <!-- ==========================================================================
+         1. HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="w-full border-b border-zinc-800">
+        <div class="max-w-4xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <!-- Site Logo / Brand Name -->
+            <a href="#" class="text-xl font-bold tracking-tight text-white">
+                YOUR NAME.
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         2. MAIN CONTENT AREA
+         ========================================================================== -->
+    <main class="flex-grow max-w-4xl mx-auto px-6 w-full">
+
+        <!-- HERO / INTRO SECTION -->
+        <section id="about" class="py-20 sm:py-28 border-b border-zinc-800">
+            <p class="text-sm uppercase tracking-widest text-zinc-400 mb-4">
+                Welcome / Introduction
+            </p>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+                A simple, clean space on the internet.
+            </h1>
+            <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mb-8 font-light">
+                Replace this paragraph with a short introduction about yourself, your project, or what this website is all about. Keep it short, clear, and easy to read.
+            </p>
+            
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-wrap gap-4">
+                <a href="#work" class="btn-outline px-6 py-3 rounded-lg text-sm font-semibold">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-6 py-3 rounded-lg text-sm font-semibold text-zinc-400 hover:text-white transition-colors">
+                    Get in Touch &rarr;
+                </a>
+            </div>
+        </section>
+
+        <!-- PROJECTS / POSTS GRID SECTION -->
+        <section id="work" class="py-20 border-b border-zinc-800">
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold tracking-tight text-white mb-2">Selected Work</h2>
+                <p class="text-zinc-400 text-sm">A collection of recent projects, articles, or links.</p>
+            </div>
+
+            <!-- Responsive Grid: 1 column on mobile, 2 columns on medium screens and up -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Card 1 -->
+                <article class="minimal-card p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-zinc-500 uppercase tracking-wider">Category / Year</span>
+                        <h3 class="text-xl font-semibold text-white mt-2 mb-3">Project Title One</h3>
+                        <p class="text-zinc-400 text-sm mb-6">
+                            A brief description of what this project or post is about. You can duplicate these article blocks to add as many cards as you need.
+                        </p>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-white underline underline-offset-4 hover:text-zinc-300">
+                        Read more &rarr;
+                    </a>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="minimal-card p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-zinc-500 uppercase tracking-wider">Category / Year</span>
+                        <h3 class="text-xl font-semibold text-white mt-2 mb-3">Project Title Two</h3>
+                        <p class="text-zinc-400 text-sm mb-6">
+                            Another short summary goes here. The crisp white border appears when you hover your mouse over the card.
+                        </p>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-white underline underline-offset-4 hover:text-zinc-300">
+                        Read more &rarr;
+                    </a>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="minimal-card p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-zinc-500 uppercase tracking-wider">Category / Year</span>
+                        <h3 class="text-xl font-semibold text-white mt-2 mb-3">Project Title Three</h3>
+                        <p class="text-zinc-400 text-sm mb-6">
+                            Use this space for blog posts, portfolio pieces, links to your social profiles, or whatever content you want to showcase.
+                        </p>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-white underline underline-offset-4 hover:text-zinc-300">
+                        Read more &rarr;
+                    </a>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="minimal-card p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-zinc-500 uppercase tracking-wider">Category / Year</span>
+                        <h3 class="text-xl font-semibold text-white mt-2 mb-3">Project Title Four</h3>
+                        <p class="text-zinc-400 text-sm mb-6">
+                            Everything is built in one single HTML file so you can easily edit it in any text editor and upload it anywhere.
+                        </p>
+                    </div>
+                    <a href="#" class="text-sm font-medium text-white underline underline-offset-4 hover:text-zinc-300">
+                        Read more &rarr;
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SIMPLE CONTACT / CTA SECTION -->
+        <section id="contact" class="py-20">
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-4">Contact</h2>
+            <p class="text-zinc-400 max-w-xl mb-6">
+                Want to collaborate or just say hello? Feel free to send an email or connect on social media.
+            </p>
+            <!-- Replace with your actual email address -->
+            <a href="mailto:hello@example.com" class="inline-block text-lg font-medium text-white border-b border-white pb-1 hover:text-zinc-300 hover:border-zinc-300 transition-colors">
+                hello@example.com
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         3. FOOTER
+         ========================================================================== -->
+    <footer class="w-full border-t border-zinc-800 mt-12">
+        <div class="max-w-4xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            
+            <!-- Social Links -->
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
